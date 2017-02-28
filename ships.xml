@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ships>
+  <ship>
+    <name>sea</name>
+    <mmsi>236310000</mmsi>
+    <long>17.01719&deg; </long>
+    <lat> -17.9918&deg;</lat>
+  </ship>
+  <ship>
+    <name>chaser</name>
+    <mmsi>236317000</mmsi>
+    <long>16.86893&deg; </long>
+    <lat> -18.01105&deg;</lat>
+  </ship>
+  <ship>
+    <name>sky</name>
+    <mmsi>236384000</mmsi>
+    <long>62.29879&deg; </long>
+    <lat> 5.662497&deg;</lat>
+  </ship>
+  <ship>
+    <name>star</name>
+    <mmsi>236483000</mmsi>
+    <long>28.14608&deg; </long>
+    <lat> -15.42255&deg;</lat>
+  </ship>
+  <ship>
+    <name>spirit</name>
+    <mmsi>236538000</mmsi>
+    <long>62.29882&deg; </long>
+    <lat> 5.661962&deg;</lat>
+  </ship>
+  <ship>
+    <name>swift</name>
+    <mmsi>236111851</mmsi>
+    <long>18.74683&deg; </long>
+    <lat> -18.08977&deg;</lat>
+  </ship>
+  <ship>
+    <name>sword</name>
+    <mmsi>236111902</mmsi>
+    <long>58.08124&deg; </long>
+    <lat> 6.779495&deg;</lat>
+  </ship>
+</ships>
