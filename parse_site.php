@@ -22,17 +22,22 @@ $xml_ships = $xml->createElement("ships");
 foreach($ships as $ship=>$val){
 
 	//----------GET DATA---------------
-	
-	// PARSE MARINE TRAFFIC SITE AS PER 21.05.14
-	$html = file_get_html('http://www.marinetraffic.com/no/ais/details/ships/' . $val);
-	$item = $html->find('a[class=details_data_link]', 0)->plaintext;
-	
+    	// PARSE vesselfinder SITE AS PER 07 Oct 2020
+    	ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 6.0)'); 
+    	$html = file_get_html('https://www.vesselfinder.com/vessels/SANCO-'. $ship .'-MMSI-' . $val);
+ 
+    	$results = $html->find('div[class=column ship-section]', 0)->plaintext;
+    	$matches = array();
+    	preg_match('/\(coordinates(.+)(E|W)\)\s/', $results, $matches);
+    
+   
+    	$withoutLetters = preg_replace("/[a-zA-Z]/", "", $matches[1]);
+    	$withoutWhitespace = str_replace(' ', '', $withoutLetters);
+    
 	// CREATE 
-	$longLat = explode('/', $item);
+	$longLat = explode('/', $withoutWhitespace);
 	$long = $longLat[0];
-	$lat = $longLat[1];
-	
-	//---------------------------------
+   	 $lat = $longLat[1];
 	
 	
 	//----------PUT INTO XML OBJECT---------------
